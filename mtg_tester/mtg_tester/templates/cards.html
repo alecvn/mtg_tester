@@ -1,0 +1,66 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+
+<h3>
+  Cards
+</h3>
+
+<br />
+
+<form enctype="multipart/form-data" action="/cards/" method="post">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td><label>Enter card name</label></td>
+      <td><input name="card_name" /></td>
+      <td><input type="submit" value="Submit" /></td>
+    </tr>
+
+    <tr height="10px">
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td><div><img height="250px" id="featured_card" src="/media/{{ featured_card }}"/></div></td>
+      <td></td>
+    </tr>
+
+  </table>
+
+</form>
+
+<form enctype="multipart/form-data" action="/cards/" method="post">
+  {% csrf_token %}
+  <table>
+
+    <tr>
+      <td>Deck Name</td>
+      <td><input name="deck_name" type="text"></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>Existing Cards</td>
+    </tr>
+
+    {% for card in cards %}
+    <tr>
+      <td></td>
+      <td>
+	<div class="card {{ card.card_name }}">{{ card.card_name }}</div>
+	<input name="card_{{ card.card_name }}" type="text">
+      </td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Select" /></td>
+    </tr>
+
+  </table>
+
+</form>
+
+{% endblock %}

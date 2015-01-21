@@ -1,0 +1,18 @@
+body {
+    background-color:#380000;
+    color: #00CC00;
+}
+
+div.card_image:hover {
+    -webkit-transform:scale(2,2);/*rotate(90deg);/*for Chrome and Safari */
+    -ms-transform:scale(2,2);/*rotate(90deg);/*for IE9*/
+    -moz-transform:scale(2,2);/*rotate(90deg);/*for Firefox*/
+    -o-transform:scale(2,2);/*rotate(90deg);/*for Opera*/
+}
+
+div.rotated_img {
+    -webkit-transform:rotate(90deg);/*for Chrome and Safari */
+    -ms-transform:rotate(90deg);/*for IE9*/
+    -moz-transform:rotate(90deg);/*for Firefox*/
+    -o-transform:rotate(90deg);/*for Opera*/
+}

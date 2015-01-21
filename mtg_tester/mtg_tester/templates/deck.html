@@ -1,0 +1,26 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+
+<h3>
+  Game
+</h3>
+
+<br />
+
+<form enctype="multipart/form-data" action="/deck/" method="post" id="deck">
+  {% csrf_token %}
+
+  <table>
+    <tr>
+      <td><label>Choose a deck</label></td>
+      <td>
+	{{ deck_choice_form }}
+      </td>
+      <td><input type="submit" value="Get Deck" /></td>
+    </tr>
+  </table>
+
+</form>
+
+{% endblock %}
